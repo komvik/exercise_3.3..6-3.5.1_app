@@ -5,6 +5,12 @@
 
 import 'dart:io';
 import 'functions/all_function.dart';
+import 'functions/cls.dart';
+import 'functions/display_info.dart';
+import 'functions/display_login.dart';
+import 'functions/display_menu.dart';
+import 'functions/print_letters_slowly.dart';
+import 'functions/register_login.dart';
 
 void main() async {
   print('\n________  Start _____________\n');
@@ -12,8 +18,6 @@ void main() async {
   displayInfo(1);
   displayInfo(2);
   bool isLoggedIn = false;
-  String username = "Vik"; // searh and read from DB  later implementiren
-  String pass = "111"; // searh and read from DB  later implementiren
 
   while (true) {
     displayMenu(isLoggedIn);
@@ -25,15 +29,18 @@ void main() async {
         await printLettersSlowly(displayLogin(1), 20);
         isLoggedIn = registerLogin(); // input List<String> later implementiren
         cls();
-        await printLettersSlowly(displayLogin(2), 50);
+        if (isLoggedIn == false) {
+          await printLettersSlowly(displayLogin(3), 100);
+        }
+        await printLettersSlowly(displayLogin(2), 100);
         cls();
-        await printLettersSlowly(displayLogin(3), 100);
+        await printLettersSlowly(displayLogin(10), 100);
         break;
       case '2':
         if (isLoggedIn) {
           infoAboutPlayer();
           cls();
-          await printLettersSlowly(displayLogin(3), 80);
+          await printLettersSlowly(displayLogin(10), 80);
         } else {
           cls();
           displayInfo(11);
@@ -43,7 +50,7 @@ void main() async {
         if (isLoggedIn) {
           setInfo();
           cls();
-          await printLettersSlowly(displayLogin(3), 80);
+          await printLettersSlowly(displayLogin(10), 80);
         } else {
           cls();
           displayInfo(11);
