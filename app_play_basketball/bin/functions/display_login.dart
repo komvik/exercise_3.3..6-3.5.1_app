@@ -2,7 +2,8 @@ String displayLogin(int strnum) {
   String str = "";
   switch (strnum) {
     case 1:
-      str = "To register you need to enter your login and password";
+      str =
+          "You are in the registration mode, \nto continue press the menu letter";
       break;
     case 2:
       str = "Welcome to the program ";

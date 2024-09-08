@@ -10,8 +10,14 @@ void displayInfo(int number) {
         '    Arrivederci\n'
         '        Au revoir!\n',
     14: 'Invalid input. Please choose a number between 1 and 4.',
+    21: "",
+    31: "",
+    41: "",
     51: "",
-    52: ""
+    61: "",
+    71: "",
+    81: "",
+    99: ""
   };
   print(printInfo[number]);
 }

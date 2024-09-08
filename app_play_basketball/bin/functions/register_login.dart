@@ -1,8 +1,24 @@
 import 'dart:io';
 
+import 'display_registered_menu.dart';
+
 bool registerLogin() {
-  //databaseReadWriteDelete();
-  return databaseRead();
+  bool registrationSuccessful = true;
+  printRegisteredMenu();
+
+  stdout.write('\nEnter the Letter: ');
+
+  registrationSuccessful = displayRegisteredMenu("${stdin.readLineSync()}");
+// "you still have $numberOfRepeat attempts";
+  return registrationSuccessful;
+}
+
+void printRegisteredMenu() {
+  print('\n       MENU:');
+  print('  [ N ]  Create a new profile');
+  print('  [ L ]  Enter your login and password');
+  print('  [ D ]  Delete existing profile');
+  print('  [ E ]  Exit or Logout  ');
 }
 
 bool databaseRead() {

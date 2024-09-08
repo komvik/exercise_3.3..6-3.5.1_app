@@ -36,6 +36,7 @@ void main() async {
         cls();
         await printLettersSlowly(displayLogin(10), 100);
         break;
+
       case '2':
         if (isLoggedIn) {
           infoAboutPlayer();
